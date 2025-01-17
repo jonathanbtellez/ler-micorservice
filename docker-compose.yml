@@ -9,6 +9,7 @@ services:
     volumes:
       - .:/src
       - /src/node_modules
+    depends_on:
       - db
     environment:
       - DB_HOST=db
