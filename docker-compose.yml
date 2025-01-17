@@ -1,0 +1,41 @@
+
+services:
+  app:
+    build:
+      context: .
+    container_name: ler-microservice
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/src
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=1234
+      - DB_NAME=ler_microservice
+    command: >
+      sh -c "until pg_isready -h db -p 5432; do
+              echo 'Waiting for PostgreSQL...';
+              sleep 2;
+            done;
+            node src/index.js"
+
+  db:
+    image: postgres:latest
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: ler_microservice
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+
+volumes:
+  postgres_data:

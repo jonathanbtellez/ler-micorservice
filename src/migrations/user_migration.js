@@ -7,14 +7,14 @@ export const createUsersTable = async () => {
     const query = `
           CREATE TABLE IF NOT EXISTS users (
           id SERIAL PRIMARY KEY,
-          nombre VARCHAR(100),
-          correo VARCHAR(100),
-          edad INT
+          name VARCHAR(100),
+          email VARCHAR(100),
+          age INT
         );
       `;
     await pool.query(query);
     info('Users table created successfully!');
-  } catch (err) {
+  } catch (err) { 
     console.log({ err })
     error(`Error creating users table: ${err}`);
   }
