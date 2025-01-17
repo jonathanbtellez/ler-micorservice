@@ -37,4 +37,4 @@ npm run test
 ```
 
 ## Adicional 
-Este proyecto cuenta con un folder de migraciones el cual cuanta con el codigo necesario para crear la base de datos Users, adicionalmente si la tabla se encuentra vacia este tambien cuanta con el codigo para realizar inserciones en la tabla haciendo posible ver alcliente informacion ya que el servicio back solo cuenta con el siguiente endpoint GET  http://localhost:3001/api/data
+Este proyecto cuenta con un folder de migraciones el cual cuenta con el codigo necesario para crear la tabla Users, adicionalmente si la tabla se encuentra vacia este tambien cuanta con el codigo para realizar inserciones en la tabla haciendo posible al cliente ver informacion ya que el servicio back solo cuenta con el siguiente endpoint GET  http://localhost:3001/api/data
