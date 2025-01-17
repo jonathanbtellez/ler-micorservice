@@ -25,11 +25,16 @@ Tambien es posible la ejecucion del proyecto sin docker ejecutando el comando
 npm start
 ```
 
-para esto contar con postgreSQL y configurar los datos del .env 
+Para esto contar con postgreSQL y configurar los datos del .env 
 
 Esto debería iniciar la aplicación en el servidor local. Por lo general, la aplicación estará disponible en http://localhost:3001/. y es la url que esta configurada en el front por favor no modificar el puerto
 
 
-## Adicional 
+## Test unitarios
+Para ejecurar los comando de pruebas unitarias ejecute el siguiente comando
+```bash
+npm run test
+```
 
+## Adicional 
 Este proyecto cuenta con un folder de migraciones el cual cuanta con el codigo necesario para crear la base de datos Users, adicionalmente si la tabla se encuentra vacia este tambien cuanta con el codigo para realizar inserciones en la tabla haciendo posible ver alcliente informacion ya que el servicio back solo cuenta con el siguiente endpoint GET  http://localhost:3001/api/data
