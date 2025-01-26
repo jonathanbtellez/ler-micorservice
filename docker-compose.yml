@@ -22,7 +22,7 @@ services:
               echo 'Waiting for PostgreSQL...';
               sleep 2;
             done;
-            npm install && node src/index.js" # Ensures npm install is run before starting the app
+            npm install && npm run dev" # Ensures npm install is run before starting the app
 
   db:
     image: postgres:latest
